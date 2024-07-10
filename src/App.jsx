@@ -10,7 +10,7 @@ import MainScreen from './screens/MainScreen';
 import BookSlotScreen from './screens/BookSlotScreen';
 import CreateTrekScreen from './screens/CreateTrekScreen';
 import MyTrekScreen from './screens/MyTrekScreen';
-import LocateTrekScreen from './screens/LocateTrekScreen';
+import ContactsScreen from './screens/ContactsScreen';
 
 const Stack = createStackNavigator();
 
@@ -46,9 +46,9 @@ const App = () => {
               options={{title: 'Confirm Booking'}}
             />
             <Stack.Screen
-              name="LocateTreks"
-              component={LocateTrekScreen}
-              options={{title: 'Confirm Booking'}}
+              name="Weather"
+              component={ContactsScreen}
+              options={{title: 'Contacts'}}
             />
             <Stack.Screen
               name="MyTreks"

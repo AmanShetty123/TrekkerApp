@@ -35,6 +35,7 @@ const MainScreen = () => {
       description={item.description}
       slots={item.slots}
       price={item.price}
+      zip={item.zip}
     />
   );
 

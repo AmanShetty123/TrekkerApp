@@ -12,8 +12,8 @@ const BottomNav = () => {
         </TouchableOpacity>
       </View>
       <View>
-        <TouchableOpacity onPress={() => navigation.navigate('LocateTreks')}>
-          <Ionicons name="map" color={'black'} size={28} />
+        <TouchableOpacity onPress={() => navigation.navigate('Weather')}>
+          <Ionicons name="call" color={'black'} size={26} />
         </TouchableOpacity>
       </View>
       <View>

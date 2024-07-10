@@ -11,6 +11,7 @@ const Card = ({
   description,
   slots,
   price,
+  zip,
 }) => {
   const navigation = useNavigation();
   const handleBookSlot = () => {
@@ -23,6 +24,7 @@ const Card = ({
       description,
       slots,
       price,
+      zip,
     });
   };
   return (
@@ -34,6 +36,7 @@ const Card = ({
       <Text style={styles.text}>Description: {description}</Text>
       <Text style={styles.text}>Remaining slots : {slots}</Text>
       <Text style={styles.text}>Price per slot : ₹ {price}</Text>
+      <Text style={styles.text}>Zip Code: {zip}</Text>
       <TouchableOpacity style={styles.bookButton} onPress={handleBookSlot}>
         <Text style={styles.bookButtonText}>Book Slot</Text>
       </TouchableOpacity>

@@ -11,6 +11,7 @@ const CreateTrekScreen = ({navigation}) => {
   const [location, setLocation] = useState('');
   const [price, setPrice] = useState('');
   const [slots, setSlots] = useState('');
+  const [zip, setZip] = useState('');
 
   const handleCreateTrek = async () => {
     try {
@@ -22,6 +23,7 @@ const CreateTrekScreen = ({navigation}) => {
         location,
         price: Number(price),
         slots: Number(slots),
+        zip: Number(zip),
       };
 
       const docRef = await addDoc(collection(db, 'treks'), trekData);
@@ -35,6 +37,7 @@ const CreateTrekScreen = ({navigation}) => {
       setLocation('');
       setPrice('');
       setSlots('');
+      setZip('');
       navigation.navigate('Main');
       // Optionally, navigate to another screen or show a success message
     } catch (error) {
@@ -103,6 +106,14 @@ const CreateTrekScreen = ({navigation}) => {
         placeholderTextColor={'black'}
         value={slots}
         onChangeText={setSlots}
+        keyboardType="numeric"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Enter Zipcode"
+        placeholderTextColor={'black'}
+        value={zip}
+        onChangeText={setZip}
         keyboardType="numeric"
       />
       <Button title="Create Trek" onPress={handleCreateTrek} />

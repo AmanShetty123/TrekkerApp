@@ -9,12 +9,12 @@ import React, {
 } from 'react';
 import {collection, getDocs, doc, updateDoc} from 'firebase/firestore';
 import {db} from '../configs/firebase';
+import {fetchWeatherForZip} from '../services/weatherService';
 
 const TrekContext = createContext();
 
 export const TrekProvider = ({children}) => {
   const [treks, setTreks] = useState([]);
-
   useEffect(() => {
     const fetchTreks = async () => {
       const querySnapshot = await getDocs(collection(db, 'treks'));
@@ -42,7 +42,12 @@ export const TrekProvider = ({children}) => {
   }, []);
 
   return (
-    <TrekContext.Provider value={{treks, setTreks, updateSlots}}>
+    <TrekContext.Provider
+      value={{
+        treks,
+        setTreks,
+        updateSlots,
+      }}>
       {children}
     </TrekContext.Provider>
   );

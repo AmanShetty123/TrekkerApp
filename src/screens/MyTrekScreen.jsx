@@ -4,6 +4,7 @@ import {collection, query, where, getDocs} from 'firebase/firestore';
 import {db} from '../configs/firebase';
 import {AuthContext} from '../context/AuthContext';
 import MyTrekCard from '../components/MyTrekCard';
+import LogoutButton from '../components/LogoutButton';
 
 const MyTreksScreen = () => {
   const {user} = useContext(AuthContext);
@@ -47,6 +48,7 @@ const MyTreksScreen = () => {
           keyExtractor={item => item.id}
         />
       )}
+      <LogoutButton />
     </View>
   );
 };

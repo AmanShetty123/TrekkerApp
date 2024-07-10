@@ -8,6 +8,7 @@ const MyTrekCard = ({
   trekId,
   trekName,
   userId,
+  zip,
 }) => {
   return (
     <View style={styles.card}>
